@@ -1,1 +1,48 @@
-<p>header works!</p>
+<header class="brewly-header">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+
+      <a class="navbar-brand d-flex align-items-center" routerLink="/">
+        <img src="/assets/images/BREWLY.svg" alt="BREWLY Logo" class="brand-logo" />
+        <h4>BREWLY</h4>
+      </a>
+
+      <button class="navbar-toggler" type="button" (click)="toggleMenu()" [attr.aria-expanded]="isMenuOpen"
+        aria-controls="brewlyNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="brewlyNavbar" [class.show]="isMenuOpen">
+        <ul class="navbar-nav align-items-lg-center">
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+              (click)="closeMenu()">
+              Home
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/products" routerLinkActive="active" (click)="closeMenu()">
+              Products
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/cart" routerLinkActive="active" (click)="closeMenu()">
+              Cart
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/about-us" routerLinkActive="active" (click)="closeMenu()">
+              About Us
+            </a>
+          </li>
+
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+</header>
