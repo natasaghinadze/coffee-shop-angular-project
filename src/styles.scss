@@ -35,10 +35,11 @@ img {
     --footer-text-color: #F5EBDD;
     --white-color: #ffffff;
     --radius-sm: 6px;
+    --primary-font-family: 'Inter', sans-serif;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--primary-font-family);
     background-color: var(--background-color);
 }
 
@@ -49,8 +50,15 @@ body {
     padding: 12px 24px;
     background-color: var(--primary-color);
     color: var(--white-color);
-    font-family: 'Inter', sans-serif;
+    font-family: var(--primary-font-family);
     font-size: 15px;
     border: none;
     border-radius: var(--radius-sm);
+}
+
+.footer-sm-box {
+    font-family: var(--primary-font-family);
+    color: #F5EBDD;
+    font-size: 15px;
+    font-weight: 400;
 }
