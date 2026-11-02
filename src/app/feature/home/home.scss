@@ -1,0 +1,112 @@
+.container {
+    .CoffeeHero {
+        width: 100%;
+        max-width: 1120px;
+        margin-inline: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 48px;
+        margin-bottom: 32px;
+
+        .slr-box {
+
+            width: 100%;
+            max-width: 552px;
+            margin-right: 48px;
+
+            h1 {
+                font-size: 36px;
+                line-height: 120%;
+                margin-bottom: 20px;
+                font-weight: 600;
+                color: #35271F;
+            }
+
+            p {
+                font-size: 15px;
+                font-family: var(--primary-font-family);
+                color: var(--text-color);
+                margin-bottom: 20px;
+            }
+
+            .auth-buttons {
+                display: flex;
+                gap: 12px;
+                margin-top: 20px;
+
+                .login {
+                    width: 70px;
+                    height: 40px;
+                    color: #493126;
+                    font-size: 14px;
+                    font-family: var(--primary-font-family);
+                    font-weight: 600;
+                    background-color: #FFFFFF;
+                    border-radius: 6px;
+                    border: 1px solid #e5e5e5;
+                    border-radius: 5px;
+                    box-shadow: none;
+                    appearance: none;
+                }
+
+                .register {
+                    width: 90px;
+                    height: 40px;
+                    color: #493126;
+                    font-size: 14px;
+                    font-family: var(--primary-font-family);
+                    font-weight: 600;
+                    background-color: #FFFFFF;
+                    border-radius: 6px;
+                    border: 1px solid #e5e5e5;
+                    border-radius: 5px;
+                    box-shadow: none;
+                    appearance: none;
+                }
+            }
+        }
+
+        .img-box {
+            img {
+                display: block;
+                width: 100%;
+                max-width: 520px;
+                height: auto;
+                border-radius: 8px;
+            }
+        }
+    }
+
+    .featuredCoffee {
+        width: 100%;
+        max-width: 1120px;
+        margin-inline: auto;
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+
+            h5 {
+                font-size: 22px;
+                font-family: var(--primary-font-family);
+                font-weight: 600;
+            }
+
+            p {
+                font-size: 14px;
+                text-decoration: underline;
+                font-family: var(--primary-font-family);
+                font-weight: 600;
+            }
+        }
+
+        .coffee-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+    }
+}

@@ -1,7 +1,31 @@
 <div class="container mt-5">
-  <h1 class="text-primary">Hello Bootstrap!</h1>
-
-  <button class="btn btn-success">
-    Click me
-  </button>
+  <section class="CoffeeHero">
+    <div class="slr-box">
+      <h1>Good coffee, simply.</h1>
+      <p>
+        Find your everyday favourite. Freshly roasted coffee beans,
+        ready to brew at home.
+      </p>
+      <button class="btn-brewly">Shop Now</button>
+      <div class="auth-buttons">
+        <button class="login" routerLink="/login">Login</button>
+        <button class="register" routerLink="/register">Register</button>
+      </div>
+    </div>
+    <div class="img-box">
+      <img src="/assets/images/Fresh-coffee.png" alt="Coffee">
+    </div>
+  </section>
+  <section class="featuredCoffee">
+    <div class="section-header">
+      <h5>Featured Coffee</h5>
+      <p>All Products</p>
+    </div>
+    <div class="coffee-grid">
+      @for (coffee of coffees; track coffee.id){
+      <app-cards [name]="coffee.name" [description]="coffee.description" [price]="coffee.price"
+        [image]="coffee.image" />
+      }
+    </div>
+  </section>
 </div>

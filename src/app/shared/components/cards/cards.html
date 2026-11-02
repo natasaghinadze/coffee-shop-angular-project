@@ -1,0 +1,10 @@
+<div class="card">
+    <img class="card-img-top" [src]="image()" [alt]="name()">
+    <div class="card-body">
+        <h5 class="card-title">{{ name() }}</h5>
+        <span>${{ price().toFixed(2) }}</span>
+    </div>
+    <p>{{ description() }}</p>
+    <button class="btn-brewly">Add to Cart</button>
+    <a href="#">View details</a>
+</div>
