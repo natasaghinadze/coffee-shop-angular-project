@@ -1,10 +1,12 @@
-@if (isLoading()) {
+<!-- @if (isLoading()) {
 <div class="load">
   <img src="/assets/images/loadcoffee.gif" alt="Loading..." class="load__gif" />
 </div>
-}
+} -->
 <app-header />
 <main class="main-content">
   <router-outlet></router-outlet>
 </main>
-<app-footer />
+@if(showFooter()){
+  <app-footer />
+}

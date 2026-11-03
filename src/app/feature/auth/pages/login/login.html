@@ -1,1 +1,44 @@
-<p>login works!</p>
+<main class="login-page">
+    <section class="login-container">
+        <div class="login-header">
+            <h1>Welcome back</h1>
+            <p>Login to your BREWLY account</p>
+        </div>
+
+        <form [formGroup]="userForm" (ngSubmit)="login()">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" [class.input-error]="emailControl.touched && emailControl.invalid" id="email" formControlName="email" autocomplete="off" placeholder="you@example.com" />
+                @if (emailControl.touched && emailControl.hasError('required')) {
+                <small class="error">Email is required.</small>
+                }
+
+                @if (emailControl.touched && emailControl.hasError('email')) {
+                <small class="error">Please enter a valid email.</small>
+                }
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+
+                <input type="password" [class.input-error]="passwordControl.touched && passwordControl.invalid" id="password" formControlName="password" placeholder="••••••••" />
+
+                @if (passwordControl.touched && passwordControl.hasError('required')) {
+                <small class="error">Password is required.</small>
+                }
+            </div>
+
+            <button type="submit" class="btn-brewly">
+                Login
+            </button>
+        </form>
+
+        <p class="register-text">
+            Don't have an account?
+            <a href="/register">Register</a>
+        </p>
+
+    </section>
+
+
+</main>

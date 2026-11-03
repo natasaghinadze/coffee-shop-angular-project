@@ -1,0 +1,99 @@
+.login-page {
+    min-height: calc(100dvh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 64px;
+
+    .login-container {
+            width: 100%;
+            max-width: 384px;
+
+            .login-header {
+            text-align: center;
+            margin-bottom: 32px;
+
+            h1 {
+                font-size: 30px;
+                font-family: var(--primary-font-family);
+                font-weight: 700;
+                line-height: 120%;
+                color: #35271F;
+                margin-bottom: 12px;
+            }
+
+            p {
+                font-size: 14px;
+                font-family: var(--primary-font-family);
+                line-height: 150%;
+                color: #8a817b;
+                margin: 0;
+            }
+        }
+
+        form{
+            display:flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .form-group{
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+
+                    label {
+                    font-size: 14px;
+                    font-family: var(--primary-font-family);
+                    font-weight: 500;
+                    color: #35271f;
+                }
+                input {
+                width: 100%;
+                padding: 12px 14px;
+                border: 1px solid #e5ddd5;
+                border-radius: 5px;
+                background-color: white;
+                font-size: 14px;
+                outline: none !important;
+
+                    &:focus {
+                    outline: 2px solid #8a6654;
+                    outline-offset: 2px;
+                    }
+                }
+
+                .input-error {
+                    border: 1.5px solid #a33b3b !important;
+                    background-color: #fffafA;
+                }
+                .error{
+                    color: #a33b3b;
+                    font-size: 0.85rem;
+                    margin-top: 4px;
+                    display: flex;
+                    align-items: center;
+                    gap: 4px;
+                }
+            }
+            .btn-brewly {
+            width: 100%;
+            margin-top: 4px;
+            }
+        }
+        .register-text {
+        text-align: center;
+        margin-top: 32px;
+        font-size: 14px;
+        color: #8a817b;
+
+        a {
+            font-family: var(--primary-font-family);
+            color: #35271f;
+            font-weight: 600;
+            text-decoration: underline;
+            }
+        }
+    }
+
+
+}
