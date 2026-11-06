@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -13,7 +13,8 @@ export class Register {
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required, Validators.minLength(8)]),
     confirmPassword: new FormControl('', [Validators.required])
-  })
+  }
+    , { validators: passwordMatchValidator });
 
   public login() {
 
@@ -23,7 +24,7 @@ export class Register {
     return this.userForm.get('fullName') as FormControl;
   }
 
-  public get emailControl(): FormControl{
+  public get emailControl(): FormControl {
     return this.userForm.get('email') as FormControl;
   }
 
@@ -34,4 +35,15 @@ export class Register {
   public get confirmPasswordControl(): FormControl {
     return this.userForm.get('confirmPassword') as FormControl;
   }
+}
+
+export function passwordMatchValidator(control: AbstractControl): ValidationErrors | null {
+  const password = control.get('password')?.value;
+  const confirmPassword = control.get('confirmPassword')?.value;
+
+  if (password !== confirmPassword) {
+    return { passwordMismatch: true };
+  }
+
+  return null;
 }

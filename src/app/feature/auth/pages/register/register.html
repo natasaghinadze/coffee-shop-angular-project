@@ -8,14 +8,16 @@
         <form [formGroup]="userForm" (ngSubmit)="login()">
             <div class="form-group">
                 <label for="fullName">Full Name</label>
-                <input type="text" [class.input-error]="fullNameControl.touched && fullNameControl.invalid" id="fullName" formControlName="fullName" autocomplete="off" placeholder="Enter your full name" />
+                <input type="text" [class.input-error]="fullNameControl.touched && fullNameControl.invalid"
+                    id="fullName" formControlName="fullName" autocomplete="off" placeholder="Enter your full name" />
                 @if (fullNameControl.touched && fullNameControl.hasError('required')) {
                 <small class="error">Full name is required.</small>
                 }
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" [class.input-error]="emailControl.touched && emailControl.invalid" id="email" formControlName="email" autocomplete="off" placeholder="you@example.com" />
+                <input type="email" [class.input-error]="emailControl.touched && emailControl.invalid" id="email"
+                    formControlName="email" autocomplete="off" placeholder="you@example.com" />
                 @if (emailControl.touched && emailControl.hasError('required')) {
                 <small class="error">Email is required.</small>
                 }
@@ -28,24 +30,34 @@
             <div class="form-group">
                 <label for="password">Password</label>
 
-                <input type="password" [class.input-error]="passwordControl.touched && passwordControl.invalid" id="password" formControlName="password" placeholder="••••••••" />
+                <input type="password" [class.input-error]="passwordControl.touched && passwordControl.invalid"
+                    id="password" formControlName="password" placeholder="••••••••" />
 
                 @if (passwordControl.touched && passwordControl.hasError('required')) {
                 <small class="error">Password is required.</small>
                 }
 
                 @if (passwordControl.touched && passwordControl.hasError('minlength')) {
-                    <small class="error">Use at least 8 characters.</small>
+                <small class="error">Use at least 8 characters.</small>
                 }
             </div>
 
             <div class="form-group">
-                <label for="confirmPassword">Confirm Password</label>
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" formControlName="confirmPassword" placeholder="••••••••"
+                    [class.input-error]="confirmPasswordControl.invalid && (confirmPasswordControl.dirty || confirmPasswordControl.touched)">
+                @if (confirmPasswordControl.touched || confirmPasswordControl.dirty) {
 
-                <input type="password" [class.input-error]="confirmPasswordControl.touched && confirmPasswordControl.invalid" id="confirmPassword" formControlName="confirmPassword" placeholder="••••••••" />
-
-                @if (confirmPasswordControl.touched && confirmPasswordControl.hasError('required')) {
-                <small class="error">Please confirm your password.</small>
+                @if (confirmPasswordControl.hasError('required')) {
+                <small class="error">
+                    პაროლის დადასტურება აუცილებელია
+                </small>
+                }
+                @else if (userForm.hasError('passwordMismatch')) {
+                <small class="error">
+                    პაროლები არ ემთხვევა ერთმანეთს
+                </small>
+                }
                 }
             </div>
 
