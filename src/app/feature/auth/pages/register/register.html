@@ -27,39 +27,42 @@
                 }
             </div>
 
-            <div class="form-group">
-                <label for="password">Password</label>
+            <ng-container formGroupName="passwordGroup">
+                <div class="form-group">
+                    <label for="password">Password</label>
 
-                <input type="password" [class.input-error]="passwordControl.touched && passwordControl.invalid"
-                    id="password" formControlName="password" placeholder="••••••••" />
+                    <input type="password" [class.input-error]="passwordControl.touched && passwordControl.invalid"
+                        id="password" formControlName="password" placeholder="••••••••" />
 
-                @if (passwordControl.touched && passwordControl.hasError('required')) {
-                <small class="error">Password is required.</small>
-                }
+                    @if (passwordControl.touched && passwordControl.hasError('required')) {
+                    <small class="error">Password is required.</small>
+                    }
 
-                @if (passwordControl.touched && passwordControl.hasError('minlength')) {
-                <small class="error">Use at least 8 characters.</small>
-                }
-            </div>
+                    @if (passwordControl.touched && passwordControl.hasError('minlength')) {
+                    <small class="error">Use at least 8 characters.</small>
+                    }
+                </div>
 
-            <div class="form-group">
-                <label for="confirmPassword">Confirm Password:</label>
-                <input type="password" id="confirmPassword" formControlName="confirmPassword" placeholder="••••••••"
-                    [class.input-error]="confirmPasswordControl.invalid && (confirmPasswordControl.dirty || confirmPasswordControl.touched)">
-                @if (confirmPasswordControl.touched || confirmPasswordControl.dirty) {
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password:</label>
+                    <input type="password" id="confirmPassword" formControlName="confirmPassword" placeholder="••••••••"
+                        [class.input-error]="confirmPasswordControl.invalid && (confirmPasswordControl.dirty || confirmPasswordControl.touched)">
+                    @if (confirmPasswordControl.touched || confirmPasswordControl.dirty) {
 
-                @if (confirmPasswordControl.hasError('required')) {
-                <small class="error">
-                    პაროლის დადასტურება აუცილებელია
-                </small>
-                }
-                @else if (userForm.hasError('passwordMismatch')) {
-                <small class="error">
-                    პაროლები არ ემთხვევა ერთმანეთს
-                </small>
-                }
-                }
-            </div>
+                    @if (confirmPasswordControl.hasError('required')) {
+                    <small class="error">
+                        Password confirmation is required
+                    </small>
+                    }
+                    @else if (userForm.get('passwordGroup')?.hasError('passwordMismatch')) {
+                    <small class="error">
+                       Passwords do not match
+                    </small>
+                    
+                    }
+                    }
+                </div>
+            </ng-container>
 
             <button type="submit" class="btn-brewly">
                 Register
