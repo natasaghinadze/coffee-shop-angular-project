@@ -1,13 +1,7 @@
 {
-  posts: [
-    { id: "1", title: "a title", views: 100 },
-    { id: "2", title: "another title", views: 200 },
-  ],
-  comments: [
-    { id: "1", text: "a comment about post 1", postId: "1" },
-    { id: "2", text: "another comment about post 1", postId: "1" },
-  ],
-  profile: {
-    name: "typicode",
-  },
+  users: [
+    { id: "1", FullName: "Nata Saghinadze", email: 'saginadzenata@gmail.com', password: 'Saginadze123!@#' },
+    { id: "2", FullName: "Kato SamniaSvili", email: 'samniashviliKato@gmail.com', password: 'Saginadze123!@#' },
+    { id: "3", FullName: "Toko Samniashvili", email: 'samniashviliToko@gmail.com', password: 'Saginadze123!@#' },
+  ]
 }
