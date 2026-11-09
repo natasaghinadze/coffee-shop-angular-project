@@ -9,12 +9,13 @@
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" [class.input-error]="emailControl.touched && emailControl.invalid" id="email" formControlName="email" autocomplete="off" placeholder="you@example.com" />
+
                 @if (emailControl.touched && emailControl.hasError('required')) {
-                <small class="error">Email is required.</small>
+                 <app-error-message [errorMessage]="'Email is required.'" />
                 }
 
                 @if (emailControl.touched && emailControl.hasError('email')) {
-                <small class="error">Please enter a valid email.</small>
+                 <app-error-message [errorMessage]="'Please enter a valid email.'" />
                 }
             </div>
 
@@ -24,7 +25,7 @@
                 <input type="password" [class.input-error]="passwordControl.touched && passwordControl.invalid" id="password" formControlName="password" placeholder="••••••••" />
 
                 @if (passwordControl.touched && passwordControl.hasError('required')) {
-                <small class="error">Password is required.</small>
+                <app-error-message [errorMessage]="'Password is required.'" />
                 }
             </div>
 

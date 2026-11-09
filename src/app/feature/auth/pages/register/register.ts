@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { passwordMatchValidator } from './validator';
+import { ErrorMessage } from '../../../../shared/components/error-message/error-message';
 
 @Component({
   selector: 'app-register',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, ErrorMessage],
   templateUrl: './register.html',
   styleUrl: './register.scss',
 })
