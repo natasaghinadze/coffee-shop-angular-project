@@ -1,7 +1,1 @@
-{
-  users: [
-    { id: "1", FullName: "Nata Saghinadze", email: 'saginadzenata@gmail.com', password: 'Saginadze123!@#' },
-    { id: "2", FullName: "Kato SamniaSvili", email: 'samniashviliKato@gmail.com', password: 'Saginadze123!@#' },
-    { id: "3", FullName: "Toko Samniashvili", email: 'samniashviliToko@gmail.com', password: 'Saginadze123!@#' },
-  ]
-}
+{users:[{id:'1',FullName:'Nata Saghinadze',email:'saginadzenata@gmail.com',password:'Saginadze123!@#'},{id:'2',FullName:'Kato SamniaSvili',email:'samniashviliKato@gmail.com',password:'Saginadze123!@#'},{id:'3',FullName:'Toko Samniashvili',email:'samniashviliToko@gmail.com',password:'Saginadze123!@#'},{fullName:'Katuna samniashvili',email:'samniashvili@gmail.com',password:'samniashvili123',id:'MJm8lkGca1s'},{fullName:'anita saghinadze',email:'anituka@gmail.com',password:'saginadze1234',id:'OtLz3bvJE94'},{fullName:'dheheh',email:'serhre@gmilcom',password:'123456asd',id:'pK9BORJ4AvU'},{fullName:'სასასასას',email:'sagi@gmail.com',password:'saginadze111',id:'MKYpUPAfcVg'}],$schema:'./node_modules/json-server/schema.json'}

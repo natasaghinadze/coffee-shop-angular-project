@@ -22,11 +22,11 @@ export class ApiRequests {
     )
   }
 
-  public login() {
+  public login(): Observable<IUserInfo[]> {
     return this.getUsers();
   }
 
-  public register() {
-
-  }
+ public register(userInfo: IUserInfo): Observable<IUserInfo> {
+  return this.http.post<IUserInfo>(`${baseUrl}/users`, userInfo);
+}
 }
