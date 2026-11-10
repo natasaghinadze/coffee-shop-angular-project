@@ -7,10 +7,12 @@
         ready to brew at home.
       </p>
       <button class="btn-brewly">Shop Now</button>
+      @if(!authService.isAuthenticated()){
       <div class="auth-buttons">
         <button class="login" routerLink="/login">Login</button>
         <button class="register" routerLink="/register">Register</button>
       </div>
+      }
     </div>
     <div class="img-box">
       <img src="/assets/images/Fresh-coffee.png" alt="Coffee">

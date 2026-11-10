@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Cards } from '../../shared/components/cards/cards';
+import { Auth } from '../../core/service/auth';
 
 @Component({
   selector: 'app-home',
@@ -10,6 +11,7 @@ import { Cards } from '../../shared/components/cards/cards';
   styleUrl: './home.scss',
 })
 export class Home {
+  public authService = inject(Auth);
   coffees = [
     {
       id: 1,
