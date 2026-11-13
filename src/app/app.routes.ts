@@ -1,26 +1,35 @@
 import { Routes } from '@angular/router';
-import { Home } from './feature/home/home';
-import { Login } from './feature/auth/pages/login/login';
-import { Register } from './feature/auth/pages/register/register';
-import { AboutUs } from './feature/about-us/about-us';
 
 export const routes: Routes = [
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
     {
-        path: '', redirectTo: 'home', pathMatch: "full"
-    },
-    {
-        path: 'home', component: Home
+        path: 'home',
+        title: 'Home | Brewly',
+        loadComponent: () => import('./feature/home/home').then(m => m.Home),
     },
     {
         path: 'login',
-        component: Login
+        title: 'Login | Brewly',
+        loadComponent: () => import('./feature/auth/pages/login/login').then(m => m.Login),
     },
     {
         path: 'register',
-        component: Register
+        title: 'Register | Brewly',
+        loadComponent: () => import('./feature/auth/pages/register/register').then(m => m.Register),
     },
     {
         path: 'about-us',
-        component: AboutUs
-    }
+        title: 'About Us | Brewly',
+        loadComponent: () => import('./feature/about-us/about-us').then(m => m.AboutUs),
+    },
+    {
+        path: 'products',
+        title: 'Products | Brewly',
+        loadComponent: () => import('./feature/products/products').then(m => m.Products),
+    },
+    {
+        path: '**',
+        title: 'Page not found | Brewly',
+        redirectTo: 'home', 
+    },
 ];
