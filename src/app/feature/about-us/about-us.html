@@ -1,1 +1,25 @@
-<p>about-us works!</p>
+<main>
+    <div class="container mt-5" style="background-color: rgb(212, 138, 138);">
+        <div class="about-content">
+            <div class="about-text">
+                <small>OUR STORY</small>
+                <h1>A little pause. <br> <i>A better cup.</i></h1>
+                <p>We’re BREWLY. We bring freshly roasted coffee to the moments <br> that matter—quiet mornings, shared conversations, and a well-earned <br> pause.</p>
+                <button class="btn-brewly">Explore Our Coffee <i class="fas fa-arrow-right"></i></button>
+            </div>
+
+            <div class="about-image">
+                <img src="assets/images/Coffee lifestyle · Brewing by hand.png" alt="About Us Image">
+            </div>
+        </div>
+        <div class="about-values">
+            @for (v of values; track v.num) {
+            <div class="value">
+                <span class="value-num">{{ v.num }}</span>
+                <h3>{{ v.title }}</h3>
+                <p>{{ v.text }}</p>
+            </div>
+            }
+        </div>
+    </div>
+</main>
