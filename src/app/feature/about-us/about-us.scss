@@ -27,12 +27,19 @@
                 margin-bottom: 24px;
                 color: #35271F;
             }
-            p{
+
+            p {
                 font-family: var(--primary-font-family);
                 font-size: 16px;
                 font-weight: 400;
                 line-height: 1.75;
                 color: #6A5E53;
+            }
+
+            .btn-brewly{
+                display: flex;
+                align-items: center;
+                gap: 12px;
             }
         }
 
@@ -53,33 +60,50 @@
     .about-values {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        border-top: 1px solid #6A5E53;
-        border-bottom: 1px solid #6A5E53;
+        border-top: 1px solid #D1C6B9;
+        border-bottom: 1px solid #D1C6B9;
         margin-top: 40px;
 
         .value {
-            padding: 24px 0px 24px 0px;
+            padding: 24px 0;
+
+            span {
+                font-size: 12px;
+                font-family: var(--primary-font-family);
+                line-height: 18px;
+                color: #6A5E53;
+            }
+
+            h3 {
+                font-family: 'Cormorant Garamond', serif;
+                font-size: 24px;
+                font-weight: 500;
+                line-height: 32px;
+                margin: 12px 0;
+                color: #35271F;
+            }
+
+            p {
+                color: #6A5E53;
+                font-size: 14px;
+                font-family: var(--primary-font-family);
+                line-height: 22px;
+            }
 
             &+.value {
                 position: relative;
+                padding-left: 24px;
 
                 &::before {
                     content: "";
                     position: absolute;
                     left: 0;
-                    top: 12px; 
+                    top: 12px;
                     bottom: 12px;
                     width: 1px;
-                    background: #6A5E53; 
-                }
-
-                h3 {
-                    font-family: 'Cormorant Garamond', serif;
-                    font-size: 22px;
-                    margin: 8px 0;
+                    background: #D1C6B9;
                 }
             }
         }
-
     }
 }
