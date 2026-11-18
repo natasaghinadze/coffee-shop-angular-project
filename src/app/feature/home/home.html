@@ -25,7 +25,7 @@
     </div>
     <div class="coffee-grid">
       @for (coffee of coffees; track coffee.id){
-      <app-cards [name]="coffee.name" [description]="coffee.description" [price]="coffee.price"
+      <app-cards [id]="coffee.id" [name]="coffee.name" [description]="coffee.description" [price]="coffee.price"
         [image]="coffee.image" />
       }
     </div>

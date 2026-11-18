@@ -1,1 +1,35 @@
-<p>products works!</p>
+<div class="container products">
+  <h1>Our coffee</h1>
+  <p class="subtitle">A few good coffees. Find the one for your daily cup.</p>
+
+  <div class="filters">
+    <div class="field">
+      <label for="search">Search coffee</label>
+      <input id="search" type="text" placeholder="Search by name"
+        [value]="search()" (input)="search.set($any($event.target).value)" />
+    </div>
+
+    <div class="field">
+      <label for="category">Category</label>
+      <select id="category" [value]="category()" (change)="category.set($any($event.target).value)">
+        <option value="all">All coffee</option>
+        @for (c of categories(); track c) {
+          <option [value]="c">{{ c }}</option>
+        }
+      </select>
+    </div>
+  </div>
+
+  <p class="count">{{ filtered().length }} products</p>
+
+  @if (filtered().length) {
+    <div class="grid">
+      @for (p of filtered(); track p.id) {
+        <app-cards [id]="p.id" [name]="p.name" [description]="p.description"
+          [price]="p.price" [image]="p.image" (addToCart)="onAddToCart(p.id)" />
+      }
+    </div>
+  } @else {
+    <p class="empty">No coffee found.</p>
+  }
+</div>

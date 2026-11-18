@@ -24,12 +24,20 @@ export const routes: Routes = [
     },
     {
         path: 'products',
-        title: 'Products | Brewly',
-        loadComponent: () => import('./feature/products/products').then(m => m.Products),
+        loadChildren: () => import('./feature/products/products.routes').then(m => m.PRODUCTS_ROUTES),
+    },
+    {
+        path: 'cart',
+        title: 'Cart | Brewly',
+        loadComponent: () => import('./feature/cart/cart').then(m => m.Cart),
+    },
+    {
+        path: 'checkout',
+        title: 'Checkout | Brewly',
+        loadComponent: () => import('./feature/checkout/checkout').then(m => m.Checkout),
     },
     {
         path: '**',
-        title: 'Page not found | Brewly',
-        redirectTo: 'home', 
+        redirectTo: 'home',
     },
 ];

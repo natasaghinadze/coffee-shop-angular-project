@@ -1,0 +1,29 @@
+<div class="container details">
+  @if (product(); as p) {
+    <nav class="breadcrumb">
+      <a routerLink="/products">Products</a>
+      <span>/ {{ p.name }}</span>
+    </nav>
+
+    <section class="details__body">
+      <img [src]="p.image" [alt]="p.name" class="details__img" />
+
+      <div class="details__info">
+        <h1>{{ p.name }}</h1>
+        <p class="meta">{{ p.description }}</p>
+        <p class="price">${{ p.price.toFixed(2) }}</p>
+        <p class="about">{{ p.longDescription }}</p>
+
+        <h2>Tastes like</h2>
+        <p class="tastes">{{ p.tastesLike }}</p>
+
+        <button class="btn-brewly details__btn" (click)="onAddToCart(p.id)">Add to Cart</button>
+        <a routerLink="/cart" class="cart-link">View cart →</a>
+      </div>
+    </section>
+  } @else if (product() === null) {
+    <p class="state">Product not found. <a routerLink="/products">Back to products</a></p>
+  } @else {
+    <p class="state">Loading...</p>
+  }
+</div>

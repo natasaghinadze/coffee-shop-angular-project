@@ -5,6 +5,6 @@
         <span>${{ price().toFixed(2) }}</span>
     </div>
     <p>{{ description() }}</p>
-    <button class="btn-brewly">Add to Cart</button>
-    <a href="#">View details</a>
+    <button class="btn-brewly w-100" (click)="addToCart.emit()">Add to Cart</button>
+    <a [routerLink]="['/products', id()]">View details</a>
 </div>
