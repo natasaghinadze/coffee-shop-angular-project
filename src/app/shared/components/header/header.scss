@@ -8,5 +8,18 @@
             font-size: 14px;
             font-family: var(--primary-font-family);
         }
+
+        .cart-badge {
+            display: inline-block;
+            min-width: 18px;
+            margin-left: 4px;
+            padding: 0 5px;
+            font-size: 11px;
+            line-height: 18px;
+            text-align: center;
+            color: var(--white-color);
+            background: var(--btn-background-color);
+            border-radius: 9px;
+        }
     }
 }

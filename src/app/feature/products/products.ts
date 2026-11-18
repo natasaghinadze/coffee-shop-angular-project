@@ -2,6 +2,8 @@ import { Component, computed, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { Cards } from '../../shared/components/cards/cards';
 import { ProductsService } from './services/products.service';
+import { IProduct } from './models/product.interface';
+import { CartService } from '../../core/service/cart';
 
 @Component({
   selector: 'app-products',
@@ -11,6 +13,7 @@ import { ProductsService } from './services/products.service';
 })
 export class Products {
   private service = inject(ProductsService);
+  private cart = inject(CartService);
 
   public products = toSignal(this.service.getAll(), { initialValue: [] });
   public search = signal('');
@@ -25,8 +28,7 @@ export class Products {
     )
   );
 
-  public onAddToCart(productId: number): void {
-    // TODO: cart service-ის დამატების შემდეგ აქ გამოიძახე
-    console.log('Add to cart:', productId);
+  public onAddToCart(product: IProduct): void {
+    this.cart.add(product);
   }
 }

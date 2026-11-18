@@ -30,6 +30,9 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="/cart" routerLinkActive="active" (click)="closeMenu()">
               Cart
+              @if (cart.count() > 0) {
+                <span class="cart-badge">{{ cart.count() }}</span>
+              }
             </a>
           </li>
 

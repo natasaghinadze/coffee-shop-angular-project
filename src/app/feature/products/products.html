@@ -26,7 +26,7 @@
     <div class="grid">
       @for (p of filtered(); track p.id) {
         <app-cards [id]="p.id" [name]="p.name" [description]="p.description"
-          [price]="p.price" [image]="p.image" (addToCart)="onAddToCart(p.id)" />
+          [price]="p.price" [image]="p.image" (addToCart)="onAddToCart(p)" />
       }
     </div>
   } @else {

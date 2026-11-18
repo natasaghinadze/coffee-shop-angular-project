@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Cards } from '../../shared/components/cards/cards';
 import { Auth } from '../../core/service/auth';
+import { CartService } from '../../core/service/cart';
 
 @Component({
   selector: 'app-home',
@@ -12,6 +13,7 @@ import { Auth } from '../../core/service/auth';
 })
 export class Home {
   public authService = inject(Auth);
+  public cart = inject(CartService);
   coffees = [
     {
       id: 1,
