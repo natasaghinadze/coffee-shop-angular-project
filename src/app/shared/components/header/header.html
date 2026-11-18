@@ -31,7 +31,7 @@
             <a class="nav-link" routerLink="/cart" routerLinkActive="active" (click)="closeMenu()">
               Cart
               @if (cart.count() > 0) {
-                <span class="cart-badge">{{ cart.count() }}</span>
+              <span class="cart-badge">{{ cart.count() }}</span>
               }
             </a>
           </li>
@@ -40,6 +40,14 @@
             <a class="nav-link" routerLink="/about-us" routerLinkActive="active" (click)="closeMenu()">
               About Us
             </a>
+          </li>
+
+          <li class="nav-item">
+            @if (auth.isAuthenticated()) {
+            <button type="button" class="nav-link logout-btn" (click)="logout()">Logout</button>
+            } @else {
+            <a class="nav-link" routerLink="/login" routerLinkActive="active" (click)="closeMenu()">Login</a>
+            }
           </li>
 
         </ul>

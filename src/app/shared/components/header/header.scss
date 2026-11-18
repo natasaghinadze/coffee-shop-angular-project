@@ -9,6 +9,13 @@
             font-family: var(--primary-font-family);
         }
 
+        .logout-btn {
+            font: inherit;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
         .cart-badge {
             display: inline-block;
             min-width: 18px;

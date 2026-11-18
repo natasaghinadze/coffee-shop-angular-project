@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ErrorMessage } from '../../../../shared/components/error-message/error-message';
 import { Auth } from '../../../../core/service/auth';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
 export class Login {
   private authService = inject(Auth)
   private router = inject(Router)
+  private route = inject(ActivatedRoute)
 
   public userForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -32,7 +33,9 @@ export class Login {
     }).subscribe({
       next: (foundUser) => {
         if (foundUser) {
-          this.router.navigate(['/home']);
+          const returnUrl = this.route.snapshot.queryParamMap.get('returnUrl');
+          const safeUrl = returnUrl && returnUrl.startsWith('/') && !returnUrl.startsWith('//') ? returnUrl : '/home';
+          this.router.navigateByUrl(safeUrl);
         } else {
           console.log('Invalid email or password');
         }

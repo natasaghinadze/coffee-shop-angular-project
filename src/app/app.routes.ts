@@ -1,5 +1,7 @@
 import { Routes } from '@angular/router';
 
+import { authGuard } from './core/guards/auth.guard';
+
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     {
@@ -34,6 +36,7 @@ export const routes: Routes = [
     {
         path: 'checkout',
         title: 'Checkout | Brewly',
+        canActivate: [authGuard],
         loadComponent: () => import('./feature/checkout/checkout').then(m => m.Checkout),
     },
     {
